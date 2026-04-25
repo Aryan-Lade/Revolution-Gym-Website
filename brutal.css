@@ -1,0 +1,44 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+::selection { background: #FFFF00; color: #000000; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #FFFF00; }
+
+@keyframes hardReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hardSlideRight { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes scanline { 0% { top: -100%; } 100% { top: 100%; } }
+
+.anim-reveal { animation: hardReveal 0.5s cubic-bezier(0,0,0.2,1) forwards; opacity: 0; }
+.anim-slide-r { animation: hardSlideRight 0.5s cubic-bezier(0,0,0.2,1) forwards; opacity: 0; }
+.delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; } .delay-5 { animation-delay: 0.5s; } .delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; } .delay-8 { animation-delay: 0.8s; } .delay-9 { animation-delay: 0.9s; }
+
+.cursor-blink::after { content: '█'; animation: blink 1s step-end infinite; color: #FFFF00; }
+.marquee-track { display: flex; width: max-content; animation: marquee 20s linear infinite; }
+.brutal-hover { transition: none; }
+.brutal-hover:hover { background: #FFFF00 !important; color: #000000 !important; }
+.card-brutal { transition: border-color 0s; }
+.card-brutal:hover { border-color: #FFFF00 !important; }
+.card-brutal:hover .card-arrow { background: #FFFF00 !important; color: #000 !important; }
+.trainer-brutal:hover .trainer-name { background: #FFFF00; color: #000; }
+.reveal-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.4s cubic-bezier(0,0,0.2,1), transform 0.4s cubic-bezier(0,0,0.2,1); }
+.reveal-scroll.visible { opacity: 1; transform: translateY(0); }
+
+.stripe-pattern {
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(255,255,0,0.06) 4px, rgba(255,255,0,0.06) 5px);
+}
+.grid-overlay::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px; pointer-events: none; z-index: 1;
+}
+.scanline-img::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 200%;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px);
+  pointer-events: none; z-index: 2; animation: scanline 8s linear infinite;
+}
+.popular-hard { box-shadow: 4px 4px 0px #FFFF00, -4px -4px 0px #FFFF00; }

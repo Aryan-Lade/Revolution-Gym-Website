@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REVOLUTION GYM — Claim Your Free Week</title>
+<meta name="description" content="Fill the form and claim your free week at Revolution Gym. No commitment, no catch.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        mono: ['"IBM Plex Mono"', 'Courier New', 'monospace'],
+        archivo: ['Archivo', 'sans-serif'],
+      },
+      colors: {
+        volt: '#FFFF00',
+        pureBlack: '#000000',
+        hardWhite: '#FFFFFF',
+        greyHard: '#888888',
+        greyMid: '#444444',
+        greyDark: '#1a1a1a',
+        greyDarker: '#111111',
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: #FFFF00; color: #000; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #000; }
+  ::-webkit-scrollbar-thumb { background: #FFFF00; }
+
+  body {
+    background: #0a0a0a;
+    min-height: 100vh;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #fff;
+  }
+
+  /* Ambient glow — top left corner */
+  .page-glow::before {
+    content: '';
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(255,255,0,0.08) 0%, rgba(255,255,0,0.03) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Form card */
+  .form-card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 300px; height: 200px;
+    background: radial-gradient(ellipse at top left, rgba(255,255,0,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Inputs */
+  .form-input {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    padding: 16px 18px;
+    width: 100%;
+    outline: none;
+    border-radius: 8px;
+    transition: border-color 0.15s;
+  }
+  .form-input:focus {
+    border-color: #FFFF00;
+  }
+  .form-input::placeholder {
+    color: #555;
+  }
+  select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    cursor: pointer;
+  }
+  select.form-input option {
+    background: #111;
+    color: #fff;
+  }
+  textarea.form-input {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  /* Labels */
+  .form-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  /* Submit button — pill with glow */
+  .submit-btn {
+    background: #FFFF00;
+    color: #000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.15s;
+    box-shadow: 0 0 30px rgba(255,255,0,0.3), 0 0 60px rgba(255,255,0,0.1);
+  }
+  .submit-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(255,255,0,0.4), 0 0 80px rgba(255,255,0,0.15);
+  }
+
+  /* Nav button */
+  .nav-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .nav-btn:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  /* Fade in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .anim-in {
+    animation: fadeUp 0.5s ease forwards;
+    opacity: 0;
+  }
+  .anim-in-d1 { animation-delay: 0.1s; }
+  .anim-in-d2 { animation-delay: 0.2s; }
+</style>
+</head>
+<body class="page-glow">
+
+  <!-- NAV -->
+  <nav class="relative z-50 px-6 lg:px-10">
+    <div class="max-w-[900px] mx-auto">
+      <div class="flex items-center justify-between h-[72px]">
+        <a href="index.html" class="flex items-center gap-1 anim-in">
+          <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; font-style:italic; color:#fff;">REVOLUTION</span><span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; font-style:italic; color:#FFFF00;">GYM</span>
+        </a>
+        <a href="index.html" class="nav-btn anim-in anim-in-d1">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FORM CARD -->
+  <main class="relative z-10 px-6 lg:px-10 pb-16 pt-6">
+    <div class="max-w-[900px] mx-auto">
+      <div class="form-card p-8 sm:p-10 lg:p-14 anim-in anim-in-d1">
+
+        <!-- Header -->
+        <div class="mb-10 relative z-10">
+          <p style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#888; font-weight:600; margin-bottom:14px;">Membership Enquiry</p>
+          <h1 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(32px,5vw,48px); line-height:0.95; letter-spacing:-0.02em; margin-bottom:14px;">
+            CLAIM YOUR <span style="color:#FFFF00;">FREE WEEK</span>
+          </h1>
+          <p style="font-size:14px; color:#777; line-height:1.6; max-width:560px;">
+            Fill the form and our team will contact you with membership details, batch timings, and onboarding steps.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form id="enquiry-form" onsubmit="handleSubmit(event)" class="relative z-10">
+
+          <!-- Row 1 -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;" class="form-row">
+            <div>
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="Enter your full name" required>
+            </div>
+            <div>
+              <label class="form-label">Mobile Number</label>
+              <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;" class="form-row">
+            <div>
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" placeholder="yourname@email.com" required>
+            </div>
+            <div>
+              <label class="form-label">Preferred Time</label>
+              <select class="form-input" required>
+                <option value="" disabled selected>Select a time slot</option>
+                <option value="morning">Morning (6AM - 9AM)</option>
+                <option value="midday">Midday (9AM - 12PM)</option>
+                <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                <option value="evening">Evening (4PM - 8PM)</option>
+                <option value="night">Night (8PM - 11PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div style="margin-bottom:24px;">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-input" placeholder="Enter your address">
+          </div>
+
+          <!-- Row 4 -->
+          <div style="margin-bottom:32px;">
+            <label class="form-label">Enquiry / Message</label>
+            <textarea class="form-input" rows="5" placeholder="Write your goal, questions, or anything you want to ask..."></textarea>
+          </div>
+
+          <!-- Bottom -->
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+            <p style="font-size:13px; color:#666; font-style:italic;">Our team usually responds within 30 minutes during working hours.</p>
+            <button type="submit" class="submit-btn">Submit Enquiry</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Success overlay -->
+  <div id="success-overlay" style="display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.92); align-items:center; justify-content:center;">
+    <div style="text-align:center; padding:48px; border:2px solid #FFFF00; max-width:420px; margin:0 16px; background:#000; border-radius:12px;" class="anim-in">
+      <div style="width:64px; height:64px; background:#FFFF00; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px;">
+        <iconify-icon icon="lucide:check" style="font-size:28px; color:#000;"></iconify-icon>
+      </div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; margin-bottom:12px;">ENQUIRY SENT<span style="color:#FFFF00;">_</span></h2>
+      <p style="font-size:14px; color:#888; margin-bottom:32px;">Our team will reach out to you within 30 minutes. Get ready to start your revolution.</p>
+      <a href="index.html" class="submit-btn" style="text-decoration:none; display:inline-block;">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Responsive -->
+  <style>
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    var overlay = document.getElementById('success-overlay');
+    overlay.style.display = 'flex';
+  }
+  </script>
+</body>
+</html>

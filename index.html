@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REVOLUTION GYM — BREAK EVERYTHING</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"IBM Plex Mono"', 'Courier New', 'monospace'],
+            archivo: ['Archivo', 'sans-serif'],
+          },
+          colors: {
+            volt: '#FFFF00',
+            voltDim: '#CCCC00',
+            pureBlack: '#000000',
+            hardWhite: '#FFFFFF',
+            greyHard: '#888888',
+            greyMid: '#444444',
+            greyDark: '#1a1a1a',
+            greyDarker: '#111111',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="brutal.css">
+</head>
+
+<body>
+  <div class="min-h-screen bg-pureBlack font-mono text-hardWhite relative grid-overlay">
+
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-pureBlack border-b-2 border-hardWhite">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a id="nav-logo-link" href="#" class="flex items-center gap-3 anim-slide-r relative z-10">
+            <div class="w-8 h-8 bg-volt flex items-center justify-center">
+              <iconify-icon icon="lucide:zap" class="text-pureBlack text-lg"></iconify-icon>
+            </div>
+            <span class="font-bold text-sm tracking-[0.2em] uppercase text-hardWhite">Revolution</span>
+          </a>
+          <div class="hidden md:flex items-center gap-0 anim-reveal delay-2 relative z-10">
+            <a href="#classes"
+              class="px-4 py-2 text-xs tracking-[0.15em] uppercase text-greyHard hover:text-volt transition-colors duration-0">Classes</a>
+            <span class="text-greyMid">/</span>
+            <a href="#trainers"
+              class="px-4 py-2 text-xs tracking-[0.15em] uppercase text-greyHard hover:text-volt transition-colors duration-0">Trainers</a>
+            <span class="text-greyMid">/</span>
+            <a href="#pricing"
+              class="px-4 py-2 text-xs tracking-[0.15em] uppercase text-greyHard hover:text-volt transition-colors duration-0">Pricing</a>
+            <span class="text-greyMid">/</span>
+            <a href="#testimonials"
+              class="px-4 py-2 text-xs tracking-[0.15em] uppercase text-greyHard hover:text-volt transition-colors duration-0">Stories</a>
+            <span class="text-greyMid">/</span>
+            <a href="#contact"
+              class="px-4 py-2 text-xs tracking-[0.15em] uppercase text-greyHard hover:text-volt transition-colors duration-0">Contact</a>
+          </div>
+          <div class="flex items-center gap-4 anim-reveal delay-3 relative z-10">
+            <a href="#"
+              class="hidden sm:inline text-xs tracking-[0.15em] uppercase text-greyHard hover:text-hardWhite">Log_in</a>
+            <a href="enquiry.html"
+              class="px-5 py-2 bg-volt text-pureBlack text-xs font-bold tracking-[0.15em] uppercase brutal-hover border-2 border-volt hover:border-hardWhite">Free
+              Trial →</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <div class="absolute top-20 right-0 w-[600px] h-[600px] border border-volt/10 rotate-45 pointer-events-none">
+      </div>
+      <div class="absolute top-40 right-20 w-[400px] h-[400px] border border-volt/5 rotate-45 pointer-events-none">
+      </div>
+      <div class="absolute bottom-0 left-0 w-full h-px bg-hardWhite"></div>
+      <div class="absolute left-8 top-1/2 -translate-y-1/2 hidden xl:block anim-reveal delay-6 z-10">
+        <p class="text-[10px] tracking-[0.3em] uppercase text-greyMid" style="writing-mode: vertical-lr;">Est. 2019 —
+          Downtown District</p>
+      </div>
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8 w-full relative z-10">
+        <div class="grid lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-64px)] py-16">
+          <div class="lg:col-span-7 max-w-2xl">
+            <div class="anim-reveal delay-1 inline-flex items-center gap-3 mb-10 border border-greyMid px-4 py-2">
+              <span class="w-2 h-2 bg-volt"></span>
+              <span class="text-[10px] font-medium text-greyHard tracking-[0.2em] uppercase">Now Open — 24/7
+                Access</span>
+            </div>
+            <h1
+              class="font-bold text-5xl md:text-6xl lg:text-[80px] leading-[0.9] tracking-tight mb-8 anim-reveal delay-2">
+              BREAK<br><span class="text-volt">EVERY</span><br>THING<span class="cursor-blink"></span></h1>
+            <p
+              class="text-sm md:text-base text-greyHard leading-relaxed mb-10 max-w-lg anim-reveal delay-3 font-normal">
+              &gt; From beginner to beast mode. World-class training,<br>&gt; expert coaches, and a community that
+              doesn't quit.<br>&gt; No excuses. No shortcuts. Just results._</p>
+            <div class="flex flex-wrap items-center gap-4 mb-16 anim-reveal delay-4">
+              <a href="enquiry.html"
+                class="group inline-flex items-center gap-3 px-8 py-4 bg-volt text-pureBlack font-bold text-sm tracking-[0.1em] uppercase border-2 border-volt brutal-hover">Start
+                Free Trial <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon></a>
+              <a href="#"
+                class="inline-flex items-center gap-3 px-8 py-4 bg-pureBlack text-hardWhite font-bold text-sm tracking-[0.1em] uppercase border-2 border-hardWhite brutal-hover"><iconify-icon
+                  icon="lucide:play" class="text-lg"></iconify-icon> Watch Video</a>
+            </div>
+            <div class="anim-reveal delay-5 flex items-center gap-8">
+              <div class="flex -space-x-2">
+                <div
+                  class="w-9 h-9 bg-volt text-pureBlack flex items-center justify-center text-[10px] font-bold border-2 border-pureBlack">
+                  JK</div>
+                <div
+                  class="w-9 h-9 bg-hardWhite text-pureBlack flex items-center justify-center text-[10px] font-bold border-2 border-pureBlack">
+                  SM</div>
+                <div
+                  class="w-9 h-9 bg-greyMid text-hardWhite flex items-center justify-center text-[10px] font-bold border-2 border-pureBlack">
+                  AR</div>
+              </div>
+              <div class="border-l border-greyMid pl-6">
+                <p class="text-xs text-greyHard"><span class="text-volt font-bold">2,100+</span> members &nbsp;/&nbsp;
+                  <span class="text-hardWhite font-bold">4.9</span> ★★★★★</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 relative hidden lg:block anim-reveal delay-3">
+            <div class="relative">
+              <div class="relative w-full aspect-[3/4] border-2 border-hardWhite overflow-hidden scanline-img">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=800&fit=crop&crop=center"
+                  alt="Athlete training" class="w-full h-full object-cover grayscale contrast-125 brightness-90">
+                <div class="absolute inset-0 bg-gradient-to-t from-pureBlack via-transparent to-transparent z-[1]">
+                </div>
+              </div>
+              <div class="absolute -bottom-4 -left-8 bg-pureBlack border-2 border-volt p-5 z-10 anim-reveal delay-7">
+                <p class="text-[10px] text-greyHard tracking-[0.2em] uppercase mb-1">Today's Burn</p>
+                <p class="font-bold text-2xl text-volt tracking-tight">850 CAL</p>
+                <div class="mt-3 h-1 bg-greyDark w-40">
+                  <div class="h-full bg-volt w-3/4"></div>
+                </div>
+              </div>
+              <div class="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-volt z-10"></div>
+              <div class="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-volt z-10"></div>
+              <div class="absolute top-6 -right-12 z-10" style="writing-mode: vertical-lr;">
+                <p class="text-[9px] tracking-[0.3em] uppercase text-greyMid">REV//GYM_2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="border-y-2 border-hardWhite py-3 overflow-hidden bg-volt">
+      <div class="marquee-track">
+        <span class="text-pureBlack text-sm font-bold tracking-[0.2em] uppercase whitespace-nowrap px-8">HIIT
+          &nbsp;◆&nbsp; STRENGTH &nbsp;◆&nbsp; BOXING &nbsp;◆&nbsp; YOGA &nbsp;◆&nbsp; CYCLING &nbsp;◆&nbsp; FUNCTIONAL
+          &nbsp;◆&nbsp; CARDIO &nbsp;◆&nbsp; MOBILITY &nbsp;◆&nbsp; COMBAT &nbsp;◆&nbsp; ENDURANCE &nbsp;◆&nbsp;</span>
+        <span class="text-pureBlack text-sm font-bold tracking-[0.2em] uppercase whitespace-nowrap px-8">HIIT
+          &nbsp;◆&nbsp; STRENGTH &nbsp;◆&nbsp; BOXING &nbsp;◆&nbsp; YOGA &nbsp;◆&nbsp; CYCLING &nbsp;◆&nbsp; FUNCTIONAL
+          &nbsp;◆&nbsp; CARDIO &nbsp;◆&nbsp; MOBILITY &nbsp;◆&nbsp; COMBAT &nbsp;◆&nbsp; ENDURANCE &nbsp;◆&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="py-16 border-b-2 border-hardWhite stripe-pattern">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-0">
+          <div class="text-center py-6 border-r border-greyMid reveal-scroll">
+            <p class="font-bold text-4xl lg:text-5xl text-volt tracking-tight">50+</p>
+            <p class="text-[10px] text-greyHard mt-2 tracking-[0.2em] uppercase">Weekly Classes</p>
+          </div>
+          <div class="text-center py-6 lg:border-r border-greyMid reveal-scroll" style="transition-delay:0.1s">
+            <p class="font-bold text-4xl lg:text-5xl text-hardWhite tracking-tight">15</p>
+            <p class="text-[10px] text-greyHard mt-2 tracking-[0.2em] uppercase">Expert Trainers</p>
+          </div>
+          <div class="text-center py-6 border-r border-greyMid reveal-scroll" style="transition-delay:0.2s">
+            <p class="font-bold text-4xl lg:text-5xl text-hardWhite tracking-tight">2.1K</p>
+            <p class="text-[10px] text-greyHard mt-2 tracking-[0.2em] uppercase">Active Members</p>
+          </div>
+          <div class="text-center py-6 reveal-scroll" style="transition-delay:0.3s">
+            <p class="font-bold text-4xl lg:text-5xl text-volt tracking-tight">24/7</p>
+            <p class="text-[10px] text-greyHard mt-2 tracking-[0.2em] uppercase">Open Access</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSES -->
+    <section id="classes" class="py-24 lg:py-32">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="mb-16 reveal-scroll">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-px bg-volt"></div>
+            <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">01 // Programs</p>
+          </div>
+          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">CLASSES THAT<br><span
+              class="text-volt">IGNITE RESULTS_</span></h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div class="card-brutal border border-greyMid p-0 reveal-scroll group">
+            <div class="relative h-48 overflow-hidden scanline-img"><img
+                src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=500&h=300&fit=crop" alt="HIIT"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+              <div
+                class="absolute top-0 left-0 bg-volt text-pureBlack text-[9px] font-bold tracking-[0.2em] uppercase px-3 py-1.5 z-10">
+                Popular</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><iconify-icon icon="lucide:zap"
+                  class="text-volt text-sm"></iconify-icon><span
+                  class="text-[10px] text-greyHard tracking-[0.15em] uppercase">High Intensity</span></div>
+              <h3 class="font-bold text-lg tracking-tight mb-2">HIIT REVOLUTION</h3>
+              <p class="text-xs text-greyHard leading-relaxed mb-5">Explosive 45-minute sessions that torch calories and
+                build endurance through interval training.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[10px] text-greyMid"><span
+                    class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 45
+                    min</span><span class="flex items-center gap-1"><iconify-icon icon="lucide:flame"
+                      class="text-xs"></iconify-icon> 600 cal</span></div><span
+                  class="card-arrow w-7 h-7 border border-greyMid flex items-center justify-center"><iconify-icon
+                    icon="lucide:arrow-right" class="text-xs"></iconify-icon></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-brutal border border-greyMid p-0 reveal-scroll group" style="transition-delay:0.05s">
+            <div class="relative h-48 overflow-hidden scanline-img"><img
+                src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&h=300&fit=crop" alt="Strength"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><iconify-icon icon="lucide:dumbbell"
+                  class="text-volt text-sm"></iconify-icon><span
+                  class="text-[10px] text-greyHard tracking-[0.15em] uppercase">Strength</span></div>
+              <h3 class="font-bold text-lg tracking-tight mb-2">POWER FORGE</h3>
+              <p class="text-xs text-greyHard leading-relaxed mb-5">Progressive overload training designed to build raw
+                strength and sculpt lean muscle mass.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[10px] text-greyMid"><span
+                    class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 60
+                    min</span><span class="flex items-center gap-1"><iconify-icon icon="lucide:flame"
+                      class="text-xs"></iconify-icon> 500 cal</span></div><span
+                  class="card-arrow w-7 h-7 border border-greyMid flex items-center justify-center"><iconify-icon
+                    icon="lucide:arrow-right" class="text-xs"></iconify-icon></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-brutal border border-greyMid p-0 reveal-scroll group" style="transition-delay:0.1s">
+            <div class="relative h-48 overflow-hidden scanline-img"><img
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&h=300&fit=crop" alt="Yoga"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><iconify-icon icon="lucide:leaf"
+                  class="text-volt text-sm"></iconify-icon><span
+                  class="text-[10px] text-greyHard tracking-[0.15em] uppercase">Flexibility</span></div>
+              <h3 class="font-bold text-lg tracking-tight mb-2">FLOW &amp; RESTORE</h3>
+              <p class="text-xs text-greyHard leading-relaxed mb-5">Dynamic yoga and mobility work that enhances
+                recovery, flexibility, and mental clarity.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[10px] text-greyMid"><span
+                    class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 50
+                    min</span><span class="flex items-center gap-1"><iconify-icon icon="lucide:flame"
+                      class="text-xs"></iconify-icon> 250 cal</span></div><span
+                  class="card-arrow w-7 h-7 border border-greyMid flex items-center justify-center"><iconify-icon
+                    icon="lucide:arrow-right" class="text-xs"></iconify-icon></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-brutal border border-greyMid p-0 reveal-scroll group" style="transition-delay:0.05s">
+            <div class="relative h-48 overflow-hidden scanline-img"><img
+                src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=500&h=300&fit=crop" alt="Boxing"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><iconify-icon icon="lucide:swords"
+                  class="text-volt text-sm"></iconify-icon><span
+                  class="text-[10px] text-greyHard tracking-[0.15em] uppercase">Combat</span></div>
+              <h3 class="font-bold text-lg tracking-tight mb-2">FIGHT CLUB</h3>
+              <p class="text-xs text-greyHard leading-relaxed mb-5">Boxing and kickboxing fundamentals that build
+                confidence, coordination, and cardio endurance.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[10px] text-greyMid"><span
+                    class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 50
+                    min</span><span class="flex items-center gap-1"><iconify-icon icon="lucide:flame"
+                      class="text-xs"></iconify-icon> 700 cal</span></div><span
+                  class="card-arrow w-7 h-7 border border-greyMid flex items-center justify-center"><iconify-icon
+                    icon="lucide:arrow-right" class="text-xs"></iconify-icon></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-brutal border border-greyMid p-0 reveal-scroll group" style="transition-delay:0.1s">
+            <div class="relative h-48 overflow-hidden scanline-img"><img
+                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&h=300&fit=crop" alt="Cycling"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><iconify-icon icon="lucide:bike"
+                  class="text-volt text-sm"></iconify-icon><span
+                  class="text-[10px] text-greyHard tracking-[0.15em] uppercase">Cardio</span></div>
+              <h3 class="font-bold text-lg tracking-tight mb-2">SPIN STORM</h3>
+              <p class="text-xs text-greyHard leading-relaxed mb-5">High-energy indoor cycling with curated playlists
+                and heart-rate-driven intensity zones.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[10px] text-greyMid"><span
+                    class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 40
+                    min</span><span class="flex items-center gap-1"><iconify-icon icon="lucide:flame"
+                      class="text-xs"></iconify-icon> 550 cal</span></div><span
+                  class="card-arrow w-7 h-7 border border-greyMid flex items-center justify-center"><iconify-icon
+                    icon="lucide:arrow-right" class="text-xs"></iconify-icon></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-brutal border border-greyMid p-0 reveal-scroll group" style="transition-delay:0.15s">
+            <div class="relative h-48 overflow-hidden scanline-img"><img
+                src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=500&h=300&fit=crop" alt="Functional"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><iconify-icon icon="lucide:target"
+                  class="text-volt text-sm"></iconify-icon><span
+                  class="text-[10px] text-greyHard tracking-[0.15em] uppercase">Functional</span></div>
+              <h3 class="font-bold text-lg tracking-tight mb-2">CORE CIRCUIT</h3>
+              <p class="text-xs text-greyHard leading-relaxed mb-5">Full-body functional movements that improve
+                stability, mobility, and everyday performance.</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[10px] text-greyMid"><span
+                    class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 45
+                    min</span><span class="flex items-center gap-1"><iconify-icon icon="lucide:flame"
+                      class="text-xs"></iconify-icon> 450 cal</span></div><span
+                  class="card-arrow w-7 h-7 border border-greyMid flex items-center justify-center"><iconify-icon
+                    icon="lucide:arrow-right" class="text-xs"></iconify-icon></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINERS -->
+    <section id="trainers" class="py-24 lg:py-32 border-t-2 border-hardWhite">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16 reveal-scroll">
+          <div class="flex items-center justify-center gap-4 mb-6">
+            <div class="w-12 h-px bg-volt"></div>
+            <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">02 // Coaches</p>
+            <div class="w-12 h-px bg-volt"></div>
+          </div>
+          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">YOUR TRANSFORMATION<br><span
+              class="text-volt">TEAM_</span></h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+          <div class="trainer-brutal border border-greyMid reveal-scroll group">
+            <div class="relative h-80 overflow-hidden"><img
+                src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=500&fit=crop"
+                alt="Marcus Chen"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-pureBlack via-pureBlack/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-5">
+                <h3 class="trainer-name inline font-bold text-base tracking-tight px-1">MARCUS CHEN</h3>
+                <p class="text-[10px] text-volt tracking-[0.15em] uppercase mt-2">Head Strength Coach</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-brutal border border-greyMid reveal-scroll group" style="transition-delay:0.05s">
+            <div class="relative h-80 overflow-hidden"><img src=temp.jpg alt="Sarah Mitchell"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-pureBlack via-pureBlack/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-5">
+                <h3 class="trainer-name inline font-bold text-base tracking-tight px-1">SARAH MITCHELL</h3>
+                <p class="text-[10px] text-volt tracking-[0.15em] uppercase mt-2">HIIT &amp; Cardio Lead</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-brutal border border-greyMid reveal-scroll group" style="transition-delay:0.1s">
+            <div class="relative h-80 overflow-hidden"><img
+                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=500&fit=crop"
+                alt="James Rivera"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-pureBlack via-pureBlack/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-5">
+                <h3 class="trainer-name inline font-bold text-base tracking-tight px-1">JAMES RIVERA</h3>
+                <p class="text-[10px] text-volt tracking-[0.15em] uppercase mt-2">Boxing &amp; Combat</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-brutal border border-greyMid reveal-scroll group" style="transition-delay:0.15s">
+            <div class="relative h-80 overflow-hidden"><img
+                src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=500&fit=crop"
+                alt="Emma Nakamura"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 contrast-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-pureBlack via-pureBlack/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-5">
+                <h3 class="trainer-name inline font-bold text-base tracking-tight px-1">EMMA NAKAMURA</h3>
+                <p class="text-[10px] text-volt tracking-[0.15em] uppercase mt-2">Yoga &amp; Mobility</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-24 lg:py-32 border-t-2 border-hardWhite stripe-pattern">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16 reveal-scroll">
+          <div class="flex items-center justify-center gap-4 mb-6">
+            <div class="w-12 h-px bg-volt"></div>
+            <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">03 // Testimonials</p>
+            <div class="w-12 h-px bg-volt"></div>
+          </div>
+          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">REAL PEOPLE<br><span
+              class="text-volt">REAL RESULTS_</span></h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-0">
+          <div class="border border-greyMid p-8 reveal-scroll card-brutal">
+            <div class="text-volt text-xs mb-5 tracking-widest">★★★★★</div>
+            <p class="text-sm text-greyHard leading-relaxed mb-8">"Revolution completely changed my relationship with
+              fitness. The trainers genuinely care about your progress, and the HIIT classes are addictive. <span
+                class="text-hardWhite font-bold">I've lost 30lbs in 4 months</span> and feel stronger than ever."</p>
+            <div class="border-t border-greyMid pt-5 flex items-center gap-3">
+              <div class="w-10 h-10 bg-volt text-pureBlack flex items-center justify-center font-bold text-xs">DK</div>
+              <div>
+                <p class="font-bold text-sm">DAVID KIM</p>
+                <p class="text-[10px] text-greyMid tracking-[0.1em] uppercase">Member // 8 months</p>
+              </div>
+            </div>
+          </div>
+          <div class="border border-greyMid p-8 reveal-scroll card-brutal" style="transition-delay:0.05s">
+            <div class="text-volt text-xs mb-5 tracking-widest">★★★★★</div>
+            <p class="text-sm text-greyHard leading-relaxed mb-8">"As a busy mom of two, I needed a gym that worked
+              around my schedule. The 24/7 access and variety of classes are perfect. <span
+                class="text-hardWhite font-bold">The community here is so supportive</span> — it's become my second
+              home."</p>
+            <div class="border-t border-greyMid pt-5 flex items-center gap-3">
+              <div class="w-10 h-10 bg-hardWhite text-pureBlack flex items-center justify-center font-bold text-xs">LP
+              </div>
+              <div>
+                <p class="font-bold text-sm">LISA PARK</p>
+                <p class="text-[10px] text-greyMid tracking-[0.1em] uppercase">Member // 1 year</p>
+              </div>
+            </div>
+          </div>
+          <div class="border border-greyMid p-8 reveal-scroll card-brutal" style="transition-delay:0.1s">
+            <div class="text-volt text-xs mb-5 tracking-widest">★★★★★</div>
+            <p class="text-sm text-greyHard leading-relaxed mb-8">"I've been training at gyms for over a decade, and
+              Revolution is on another level. <span class="text-hardWhite font-bold">The equipment is top-tier, the
+                coaching is world-class</span>, and the energy in every class is unmatched."</p>
+            <div class="border-t border-greyMid pt-5 flex items-center gap-3">
+              <div class="w-10 h-10 bg-volt text-pureBlack flex items-center justify-center font-bold text-xs">MT</div>
+              <div>
+                <p class="font-bold text-sm">MIKE TORRES</p>
+                <p class="text-[10px] text-greyMid tracking-[0.1em] uppercase">Member // 2 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 lg:py-32 border-t-2 border-hardWhite">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16 reveal-scroll">
+          <div class="flex items-center justify-center gap-4 mb-6">
+            <div class="w-12 h-px bg-volt"></div>
+            <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">04 // Pricing</p>
+            <div class="w-12 h-px bg-volt"></div>
+          </div>
+          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">INVEST IN YOUR<br><span
+              class="text-volt">BEST SELF_</span></h2>
+          <p class="text-sm text-greyHard mt-4">&gt; No contracts. No hidden fees. 7-day free trial on any plan._</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-0 max-w-5xl mx-auto">
+          <div class="border border-greyMid p-8 flex flex-col reveal-scroll card-brutal">
+            <div class="mb-6">
+              <p class="text-[10px] font-bold text-greyMid tracking-[0.2em] uppercase mb-3">Starter</p>
+              <div class="flex items-baseline gap-1"><span class="font-bold text-5xl tracking-tight">$29</span><span
+                  class="text-greyMid text-sm">/mo</span></div>
+            </div>
+            <p class="text-xs text-greyHard mb-8">Perfect for getting started on your fitness journey.</p>
+            <ul class="space-y-3 mb-10 flex-1">
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Full gym access</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">2 group classes/week</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Locker room access</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-greyMid font-bold">[—]</span><span
+                  class="text-greyMid">Personal training</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-greyMid font-bold">[—]</span><span
+                  class="text-greyMid">Nutrition coaching</span></li>
+            </ul>
+            <a href="enquiry.html"
+              class="block text-center px-6 py-3.5 border-2 border-greyMid text-sm font-bold tracking-[0.1em] uppercase brutal-hover">Start
+              Free Trial</a>
+          </div>
+          <div class="relative border-2 border-volt p-8 flex flex-col reveal-scroll popular-hard bg-greyDarker"
+            style="transition-delay:0.05s">
+            <div class="absolute -top-px left-0 right-0 h-1 bg-volt"></div>
+            <div
+              class="absolute -top-8 left-1/2 -translate-x-1/2 bg-volt text-pureBlack text-[9px] font-bold tracking-[0.2em] uppercase px-4 py-1.5">
+              Most Popular</div>
+            <div class="mb-6">
+              <p class="text-[10px] font-bold text-volt tracking-[0.2em] uppercase mb-3">Pro</p>
+              <div class="flex items-baseline gap-1"><span
+                  class="font-bold text-5xl tracking-tight text-volt">$59</span><span
+                  class="text-greyMid text-sm">/mo</span></div>
+            </div>
+            <p class="text-xs text-greyHard mb-8">The complete package for serious athletes and achievers.</p>
+            <ul class="space-y-3 mb-10 flex-1">
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">24/7 gym access</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Unlimited classes</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">2 PT sessions/month</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Nutrition guidance</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">InBody scans monthly</span></li>
+            </ul>
+            <a href="enquiry.html"
+              class="block text-center px-6 py-3.5 bg-volt text-pureBlack border-2 border-volt text-sm font-bold tracking-[0.1em] uppercase brutal-hover">Start
+              Free Trial →</a>
+          </div>
+          <div class="border border-greyMid p-8 flex flex-col reveal-scroll card-brutal" style="transition-delay:0.1s">
+            <div class="mb-6">
+              <p class="text-[10px] font-bold text-greyMid tracking-[0.2em] uppercase mb-3">Elite</p>
+              <div class="flex items-baseline gap-1"><span class="font-bold text-5xl tracking-tight">$99</span><span
+                  class="text-greyMid text-sm">/mo</span></div>
+            </div>
+            <p class="text-xs text-greyHard mb-8">Premium experience with dedicated coaching and perks.</p>
+            <ul class="space-y-3 mb-10 flex-1">
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Everything in Pro</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Weekly PT sessions</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Custom meal plans</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Recovery suite access</span></li>
+              <li class="flex items-center gap-3 text-xs"><span class="text-volt font-bold">[+]</span><span
+                  class="text-greyHard">Guest passes (2/mo)</span></li>
+            </ul>
+            <a href="enquiry.html"
+              class="block text-center px-6 py-3.5 border-2 border-greyMid text-sm font-bold tracking-[0.1em] uppercase brutal-hover">Start
+              Free Trial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="py-24 lg:py-32 border-t-2 border-hardWhite">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="relative border-2 border-volt p-12 lg:p-20 reveal-scroll">
+          <div class="absolute -top-2 -left-2 w-6 h-6 border-t-4 border-l-4 border-volt"></div>
+          <div class="absolute -top-2 -right-2 w-6 h-6 border-t-4 border-r-4 border-volt"></div>
+          <div class="absolute -bottom-2 -left-2 w-6 h-6 border-b-4 border-l-4 border-volt"></div>
+          <div class="absolute -bottom-2 -right-2 w-6 h-6 border-b-4 border-r-4 border-volt"></div>
+          <div class="text-center">
+            <h2 class="font-bold text-3xl lg:text-6xl tracking-tight mb-4">READY TO START<br>YOUR <span
+                class="text-volt">REVOLUTION</span>?</h2>
+            <p class="text-sm text-greyHard max-w-xl mx-auto mb-10">&gt; Join 2,100+ members who've transformed their
+              lives.<br>&gt; Your first 7 days are completely free — no commitment, no catch._</p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <a href="enquiry.html"
+                class="inline-flex items-center gap-3 px-10 py-4 bg-volt text-pureBlack font-bold text-sm tracking-[0.1em] uppercase border-2 border-volt brutal-hover">Claim
+                Your Free Week <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon></a>
+              <a href="#"
+                class="inline-flex items-center gap-3 px-10 py-4 bg-pureBlack text-hardWhite font-bold text-sm tracking-[0.1em] uppercase border-2 border-hardWhite brutal-hover"><iconify-icon
+                  icon="lucide:calendar" class="text-lg"></iconify-icon> Schedule a Tour</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t-2 border-hardWhite py-16">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div>
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 bg-volt flex items-center justify-center"><iconify-icon icon="lucide:zap"
+                  class="text-pureBlack text-lg"></iconify-icon></div><span
+                class="font-bold text-sm tracking-[0.2em] uppercase">Revolution</span>
+            </div>
+            <p class="text-xs text-greyMid leading-relaxed mb-5">Redefining fitness since 2019. State-of-the-art
+              facilities, world-class coaching, and an unstoppable community.</p>
+            <div class="flex gap-2">
+              <a href="#"
+                class="w-8 h-8 border border-greyMid flex items-center justify-center brutal-hover"><iconify-icon
+                  icon="lucide:instagram" class="text-xs"></iconify-icon></a>
+              <a href="#"
+                class="w-8 h-8 border border-greyMid flex items-center justify-center brutal-hover"><iconify-icon
+                  icon="lucide:twitter" class="text-xs"></iconify-icon></a>
+              <a href="#"
+                class="w-8 h-8 border border-greyMid flex items-center justify-center brutal-hover"><iconify-icon
+                  icon="lucide:youtube" class="text-xs"></iconify-icon></a>
+              <a href="#"
+                class="w-8 h-8 border border-greyMid flex items-center justify-center brutal-hover"><iconify-icon
+                  icon="lucide:music" class="text-xs"></iconify-icon></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold text-[10px] tracking-[0.2em] uppercase mb-5 text-volt">&gt; Quick Links</h4>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="text-xs text-greyMid hover:text-volt transition-colors duration-0">About_Us</a>
+              </li>
+              <li><a href="#classes"
+                  class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Classes</a></li>
+              <li><a href="#" class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Schedule</a>
+              </li>
+              <li><a href="#pricing"
+                  class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Pricing</a></li>
+              <li><a href="#" class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-[10px] tracking-[0.2em] uppercase mb-5 text-volt">&gt; Support</h4>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="text-xs text-greyMid hover:text-volt transition-colors duration-0">FAQ</a></li>
+              <li><a href="#" class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Contact_Us</a>
+              </li>
+              <li><a href="#"
+                  class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Privacy_Policy</a></li>
+              <li><a href="#"
+                  class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Terms_of_Service</a></li>
+              <li><a href="#" class="text-xs text-greyMid hover:text-volt transition-colors duration-0">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-[10px] tracking-[0.2em] uppercase mb-5 text-volt">&gt; Visit_Us</h4>
+            <ul class="space-y-3 text-xs text-greyMid">
+              <li class="flex items-start gap-2.5"><iconify-icon icon="lucide:map-pin"
+                  class="text-volt mt-0.5 flex-shrink-0"></iconify-icon><span>742 Evergreen Ave,<br>Downtown
+                  District</span></li>
+              <li class="flex items-center gap-2.5"><iconify-icon icon="lucide:clock"
+                  class="text-volt flex-shrink-0"></iconify-icon><span>Open 24/7</span></li>
+              <li class="flex items-center gap-2.5"><iconify-icon icon="lucide:phone"
+                  class="text-volt flex-shrink-0"></iconify-icon><span>(555) 123-4567</span></li>
+              <li class="flex items-center gap-2.5"><iconify-icon icon="lucide:mail"
+                  class="text-volt flex-shrink-0"></iconify-icon><span>hello@revolutiongym.co</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-greyMid flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-[10px] text-greyMid tracking-[0.1em]">&copy; 2025 REVOLUTION GYM. ALL RIGHTS RESERVED.</p>
+          <p class="text-[10px] text-greyMid tracking-[0.1em]">BUILT WITH RAW POWER &amp; ZERO EXCUSES.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
