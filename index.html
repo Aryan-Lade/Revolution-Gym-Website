@@ -34,6 +34,7 @@
     }
   </script>
   <link rel="stylesheet" href="brutal.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -462,6 +463,62 @@
       </div>
     </section>
 
+    <!-- BEFORE / AFTER -->
+    <section id="transformations" class="py-24 lg:py-32 border-t-2 border-hardWhite">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16 reveal-scroll">
+          <div class="flex items-center justify-center gap-4 mb-6">
+            <div class="w-12 h-px bg-volt"></div>
+            <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">Transformations</p>
+            <div class="w-12 h-px bg-volt"></div>
+          </div>
+          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">BEFORE<br><span
+              class="text-volt">&amp; AFTER_</span></h2>
+          <p class="text-sm text-greyHard mt-4">&gt; Drag the slider to see the transformation._</p>
+        </div>
+        <div class="max-w-3xl mx-auto reveal-scroll">
+          <!-- Slider: images injected/updated by JS from the data set below -->
+          <div class="ba-slider" data-ba
+            role="slider" tabindex="0" aria-label="Before and after comparison slider"
+            aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <!-- AFTER (base layer, full width) -->
+            <div class="ba-pane ba-after">
+              <img class="ba-img" alt="After transformation" loading="lazy" draggable="false" />
+              <span class="ba-label ba-label--after">After</span>
+            </div>
+            <!-- BEFORE (top layer, clipped) -->
+            <div class="ba-pane ba-before">
+              <img class="ba-img" alt="Before transformation" loading="lazy" draggable="false" />
+              <span class="ba-label ba-label--before">Before</span>
+            </div>
+            <!-- HANDLE -->
+            <div class="ba-handle" aria-hidden="true">
+              <div class="ba-knob">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/><polyline points="9 6 3 12 9 18" transform="translate(12,0)"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Details card + navigation -->
+          <div class="ba-info mt-6">
+            <button class="ba-nav ba-prev" aria-label="Previous transformation">&larr;</button>
+            <div class="ba-card" data-ba-card aria-live="polite">
+              <p class="ba-card-name" data-name>—</p>
+              <div class="ba-card-stats">
+                <div><span class="ba-stat-val" data-result>—</span><span class="ba-stat-key">Result</span></div>
+                <div><span class="ba-stat-val" data-duration>—</span><span class="ba-stat-key">Duration</span></div>
+                <div><span class="ba-stat-val" data-goal>—</span><span class="ba-stat-key">Goal Achieved</span></div>
+              </div>
+            </div>
+            <button class="ba-nav ba-next" aria-label="Next transformation">&rarr;</button>
+          </div>
+
+          <!-- Dots -->
+          <div class="ba-dots" data-ba-dots></div>
+        </div>
+      </div>
+    </section>
+
     <!-- PRICING -->
     <section id="pricing" class="py-24 lg:py-32 border-t-2 border-hardWhite">
       <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
@@ -550,6 +607,59 @@
             <a href="enquiry.html"
               class="block text-center px-6 py-3.5 border-2 border-greyMid text-sm font-bold tracking-[0.1em] uppercase brutal-hover">Start
               Free Trial</a>
+          </div>
+        </div>
+
+        <!-- PLAN COMPARISON TABLE -->
+        <div class="mt-20 max-w-5xl mx-auto reveal-scroll">
+          <div class="flex items-center justify-center gap-4 mb-10">
+            <div class="w-8 h-px bg-volt"></div>
+            <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">Compare Plans</p>
+            <div class="w-8 h-px bg-volt"></div>
+          </div>
+          <div class="overflow-x-auto border border-greyMid">
+            <table class="w-full min-w-[560px] text-left border-collapse">
+              <thead>
+                <tr class="border-b border-greyMid">
+                  <th class="p-4 text-[10px] font-bold text-greyMid tracking-[0.2em] uppercase">Feature</th>
+                  <th class="p-4 text-center text-[10px] font-bold text-greyMid tracking-[0.2em] uppercase">Basic</th>
+                  <th class="p-4 text-center text-[10px] font-bold text-volt tracking-[0.2em] uppercase bg-greyDarker">Premium</th>
+                  <th class="p-4 text-center text-[10px] font-bold text-greyMid tracking-[0.2em] uppercase">Elite</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-greyMid">
+                  <td class="p-4 text-xs text-greyHard">Full gym access</td>
+                  <td class="p-4 text-center text-volt font-bold">[+]</td>
+                  <td class="p-4 text-center text-volt font-bold bg-greyDarker">[+]</td>
+                  <td class="p-4 text-center text-volt font-bold">[+]</td>
+                </tr>
+                <tr class="border-b border-greyMid">
+                  <td class="p-4 text-xs text-greyHard">Personal Trainer</td>
+                  <td class="p-4 text-center text-greyMid font-bold">[—]</td>
+                  <td class="p-4 text-center text-volt font-bold bg-greyDarker">[+]</td>
+                  <td class="p-4 text-center text-volt font-bold">[+]</td>
+                </tr>
+                <tr class="border-b border-greyMid">
+                  <td class="p-4 text-xs text-greyHard">Diet Plan</td>
+                  <td class="p-4 text-center text-greyMid font-bold">[—]</td>
+                  <td class="p-4 text-center text-volt font-bold bg-greyDarker">[+]</td>
+                  <td class="p-4 text-center text-volt font-bold">[+]</td>
+                </tr>
+                <tr class="border-b border-greyMid">
+                  <td class="p-4 text-xs text-greyHard">Group Classes</td>
+                  <td class="p-4 text-center text-greyMid font-bold">[—]</td>
+                  <td class="p-4 text-center text-volt font-bold bg-greyDarker">[+]</td>
+                  <td class="p-4 text-center text-volt font-bold">[+]</td>
+                </tr>
+                <tr>
+                  <td class="p-4 text-xs text-greyHard">Steam Bath</td>
+                  <td class="p-4 text-center text-greyMid font-bold">[—]</td>
+                  <td class="p-4 text-center text-greyMid font-bold bg-greyDarker">[—]</td>
+                  <td class="p-4 text-center text-volt font-bold">[+]</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -664,6 +774,7 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal-scroll').forEach(el => observer.observe(el));
   </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
