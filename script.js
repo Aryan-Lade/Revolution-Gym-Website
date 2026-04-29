@@ -1,18 +1,22 @@
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.style.background = window.scrollY > 40
-    ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.85)';
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.style.background = window.scrollY > 40
+      ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.85)';
+  });
+}
 
 // ===== HAMBURGER =====
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+}
 function closeMobileMenu() {
-  mobileMenu.classList.remove('open');
+  if (mobileMenu) mobileMenu.classList.remove('open');
 }
 
 // ===== STATS COUNT-UP =====
