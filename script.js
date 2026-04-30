@@ -69,41 +69,22 @@ statNums.forEach(el => statsObserver.observe(el));
 
 // ===== BEFORE / AFTER TRANSFORMATIONS =====
 (function () {
-  const slider = document.querySelector('[data-ba]');
-  if (!slider) return;
+  const frame = document.querySelector('[data-ba]');
+  if (!frame) return;
 
   // --- Transformation data set (add more objects to extend) ---
+  // `image` = a single combo photo showing before + after together.
   const DATA = [
     {
-      before: '/assets/transformations/before1.jpg',
-      after: '/assets/transformations/after1.jpg',
+      image: 'BeforeAfter.jpg',
       name: 'John Smith',
       result: 'Lost 18 kg',
       duration: '6 Months',
       goal: 'Body Fat 32% → 14%'
-    },
-    {
-      before: '/assets/transformations/before2.jpg',
-      after: '/assets/transformations/after2.jpg',
-      name: 'Priya Sharma',
-      result: 'Gained 8 kg muscle',
-      duration: '9 Months',
-      goal: 'Strength +140%'
-    },
-    {
-      before: '/assets/transformations/before3.jpg',
-      after: '/assets/transformations/after3.jpg',
-      name: 'Marcus Lee',
-      result: 'Lost 24 kg',
-      duration: '12 Months',
-      goal: 'Body Fat 36% → 12%'
     }
   ];
 
-  const beforeImg = slider.querySelector('.ba-before .ba-img');
-  const afterImg = slider.querySelector('.ba-after .ba-img');
-  const beforePane = slider.querySelector('.ba-before');
-  const handle = slider.querySelector('.ba-handle');
+  const img = frame.querySelector('.ba-frame-img');
   const card = document.querySelector('[data-ba-card]');
   const dotsWrap = document.querySelector('[data-ba-dots]');
   const nameEl = card.querySelector('[data-name]');
@@ -112,32 +93,30 @@ statNums.forEach(el => statsObserver.observe(el));
   const goalEl = card.querySelector('[data-goal]');
 
   let index = 0;
-  let pos = 50;            // slider position %
-  let rafId = null;
+  let timer = null;
 
-  // --- Render a transformation into the slider + card ---
-  // Placeholder generated when a real image is missing
-  function placeholder(label, bg, fg) {
+  // Styled placeholder shown until a real image is dropped in
+  function placeholder() {
     const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'>
-      <rect width='100%' height='100%' fill='${bg}'/>
-      <text x='50%' y='50%' fill='${fg}' font-family='sans-serif' font-size='120'
-        font-weight='700' text-anchor='middle' dominant-baseline='middle'
-        opacity='0.25'>${label}</text></svg>`;
+      <rect width='50%' height='100%' fill='#111'/>
+      <rect x='50%' width='50%' height='100%' fill='#ffff00'/>
+      <text x='25%' y='50%' fill='#fff' font-family='sans-serif' font-size='90'
+        font-weight='700' text-anchor='middle' dominant-baseline='middle' opacity='0.25'>BEFORE</text>
+      <text x='75%' y='50%' fill='#000' font-family='sans-serif' font-size='90'
+        font-weight='700' text-anchor='middle' dominant-baseline='middle' opacity='0.25'>AFTER</text></svg>`;
     return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
   }
 
   function render(i) {
     const d = DATA[i];
-    beforeImg.onerror = () => { beforeImg.onerror = null; beforeImg.src = placeholder('BEFORE', '#111', '#fff'); };
-    afterImg.onerror = () => { afterImg.onerror = null; afterImg.src = placeholder('AFTER', '#ffff00', '#000'); };
-    beforeImg.src = d.before;
-    afterImg.src = d.after;
+    img.onerror = () => { img.onerror = null; img.src = placeholder(); };
+    img.src = d.image;
     nameEl.textContent = d.name;
     resultEl.textContent = d.result;
     durationEl.textContent = d.duration;
     goalEl.textContent = d.goal;
     card.classList.remove('ba-fade', 'in');
-    void card.offsetWidth;          // restart animation
+    void card.offsetWidth;          // restart fade animation
     card.classList.add('ba-fade', 'in');
     dotsWrap.querySelectorAll('.ba-dot').forEach((dot, di) =>
       dot.classList.toggle('active', di === i));
@@ -148,7 +127,7 @@ statNums.forEach(el => statsObserver.observe(el));
     const dot = document.createElement('button');
     dot.className = 'ba-dot';
     dot.setAttribute('aria-label', `Go to transformation ${i + 1}`);
-    dot.addEventListener('click', () => { go(i); });
+    dot.addEventListener('click', () => go(i));
     dotsWrap.appendChild(dot);
   });
 
@@ -158,63 +137,25 @@ statNums.forEach(el => statsObserver.observe(el));
     resetAutoplay();
   }
 
-  // --- Slider drag position (rAF-throttled) ---
-  function apply() {
-    beforePane.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
-    handle.style.left = pos + '%';
-    slider.setAttribute('aria-valuenow', Math.round(pos));
-    rafId = null;
-  }
-  function setPos(clientX) {
-    const rect = slider.getBoundingClientRect();
-    pos = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-    if (!rafId) rafId = requestAnimationFrame(apply);
-  }
-
-  let dragging = false;
-  const getX = (e) => (e.touches ? e.touches[0] : e).clientX;
-  const start = (e) => { dragging = true; setPos(getX(e)); };
-  const move = (e) => { if (dragging) setPos(getX(e)); };
-  const end = () => { dragging = false; };
-
-  slider.addEventListener('mousedown', start);
-  window.addEventListener('mousemove', move);
-  window.addEventListener('mouseup', end);
-  slider.addEventListener('touchstart', start, { passive: true });
-  window.addEventListener('touchmove', move, { passive: true });
-  window.addEventListener('touchend', end);
-
-  // --- Keyboard accessibility ---
-  slider.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') { pos = Math.max(0, pos - 5); apply(); }
-    else if (e.key === 'ArrowRight') { pos = Math.min(100, pos + 5); apply(); }
-    else if (e.key === 'Home') { pos = 0; apply(); }
-    else if (e.key === 'End') { pos = 100; apply(); }
-  });
-
   // --- Prev / Next buttons ---
   document.querySelector('.ba-prev').addEventListener('click', () => go(index - 1));
   document.querySelector('.ba-next').addEventListener('click', () => go(index + 1));
 
-  // --- Autoplay every 6s, pause on hover ---
-  let timer = null;
+  // --- Autoplay every 6s, pause on hover (only cycles with 2+ entries) ---
   function resetAutoplay() {
     clearInterval(timer);
-    timer = setInterval(() => go(index + 1), 6000);
+    if (DATA.length > 1) timer = setInterval(() => go(index + 1), 6000);
   }
-  slider.addEventListener('mouseenter', () => clearInterval(timer));
-  slider.addEventListener('mouseleave', resetAutoplay);
+  frame.addEventListener('mouseenter', () => clearInterval(timer));
+  frame.addEventListener('mouseleave', resetAutoplay);
 
   // --- Fade-in when section enters viewport ---
   const section = document.getElementById('transformations');
   if (section) {
-    section.querySelectorAll('.ba-slider, .ba-info, .ba-dots').forEach(el => el.classList.add('ba-fade'));
+    section.querySelectorAll('.ba-frame, .ba-info, .ba-dots').forEach(el => el.classList.add('ba-fade'));
     const io = new IntersectionObserver((entries) => {
       entries.forEach(en => {
-        if (en.isIntersecting) {
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-        }
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
     }, { threshold: 0.15 });
     section.querySelectorAll('.ba-fade').forEach(el => io.observe(el));
@@ -222,6 +163,5 @@ statNums.forEach(el => statsObserver.observe(el));
 
   // Init
   render(0);
-  apply();
   resetAutoplay();
 })();
