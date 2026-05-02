@@ -472,11 +472,11 @@
             <p class="text-[10px] text-volt font-bold tracking-[0.3em] uppercase">Transformations</p>
             <div class="w-12 h-px bg-volt"></div>
           </div>
-          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">BEFORE<br><span
-              class="text-volt">&amp; AFTER_</span></h2>
+          <h2 class="font-bold text-4xl lg:text-5xl tracking-tight leading-[0.95]">BEFORE &amp; AFTER<br><span
+              class="text-volt">TRANSFORMATION_</span></h2>
           <p class="text-sm text-greyHard mt-4">&gt; Real members. Real results._</p>
         </div>
-        <div class="max-w-3xl mx-auto reveal-scroll">
+        <div class="max-w-5xl mx-auto reveal-scroll grid md:grid-cols-2 gap-10 items-center">
           <!-- Framed combo image (before + after in one) -->
           <div class="ba-frame" data-ba>
             <img class="ba-frame-img" alt="Before and after transformation" loading="lazy" draggable="false" />
@@ -484,22 +484,24 @@
             <span class="ba-label ba-label--after">After</span>
           </div>
 
-          <!-- Details card + navigation -->
-          <div class="ba-info mt-6">
-            <button class="ba-nav ba-prev" aria-label="Previous transformation">&larr;</button>
-            <div class="ba-card" data-ba-card aria-live="polite">
-              <p class="ba-card-name" data-name>—</p>
-              <div class="ba-card-stats">
-                <div><span class="ba-stat-val" data-result>—</span><span class="ba-stat-key">Result</span></div>
-                <div><span class="ba-stat-val" data-duration>—</span><span class="ba-stat-key">Duration</span></div>
-                <div><span class="ba-stat-val" data-goal>—</span><span class="ba-stat-key">Goal Achieved</span></div>
+          <!-- Details + navigation on the right -->
+          <div>
+            <div class="ba-info">
+              <div class="ba-card" data-ba-card aria-live="polite">
+                <p class="ba-card-name" data-name>—</p>
+                <div class="ba-card-stats">
+                  <div><span class="ba-stat-val" data-result>—</span><span class="ba-stat-key">Result</span></div>
+                  <div><span class="ba-stat-val" data-duration>—</span><span class="ba-stat-key">Duration</span></div>
+                  <div><span class="ba-stat-val" data-goal>—</span><span class="ba-stat-key">Goal Achieved</span></div>
+                </div>
               </div>
             </div>
-            <button class="ba-nav ba-next" aria-label="Next transformation">&rarr;</button>
+            <div class="ba-info mt-4">
+              <button class="ba-nav ba-prev" aria-label="Previous transformation">&larr;</button>
+              <div class="ba-dots flex-1" data-ba-dots></div>
+              <button class="ba-nav ba-next" aria-label="Next transformation">&rarr;</button>
+            </div>
           </div>
-
-          <!-- Dots -->
-          <div class="ba-dots" data-ba-dots></div>
         </div>
       </div>
     </section>
