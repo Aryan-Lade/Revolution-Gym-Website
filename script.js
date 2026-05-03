@@ -19,6 +19,20 @@ function closeMobileMenu() {
   if (mobileMenu) mobileMenu.classList.remove('open');
 }
 
+// ===== SCROLL PROGRESS BAR =====
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const scrolled = h.scrollHeight - h.clientHeight;
+    const pct = scrolled > 0 ? (h.scrollTop / scrolled) * 100 : 0;
+    scrollProgress.style.height = pct + '%';
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+}
+
 // ===== STATS COUNT-UP =====
 function animateCountUp(el) {
   const target = parseInt(el.dataset.target);
